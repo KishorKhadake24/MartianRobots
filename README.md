@@ -57,7 +57,7 @@ Records & Extension Methods: Immutability, clean code organization
 
 Problem Solving Approach:
 
-Maintained Object oriented design, clear separation of concerns with TDD
+Maintained Object oriented design, clear separation of concerns
 1 Defined orientation enum and implement left/right turns
 2 Created grid class and track boundaries
 3 Created robot, implement forward movement and position 
