@@ -75,5 +75,64 @@ public class RobotTests
         Assert.Equal("4 1 E", robot.ToString());
     }
 
-   
+    [Fact]
+public void RobotBecomesLostOffGridNorth()
+{
+    var grid = new Grid(5, 3);
+    var position = new RobotPosition(5, 3, Orientation.N);
+    var robot = new Robot(position, grid);
+    
+    robot.ExecuteInstructions("F");
+    
+    Assert.True(robot.IsLost);
+    Assert.Equal("5 3 N LOST", robot.ToString());
+}
+
+[Fact]
+public void RobotLeavesScent()
+{
+    var grid = new Grid(5, 3);
+    var position = new RobotPosition(5, 3, Orientation.N);
+    var robot = new Robot(position, grid);
+    
+    robot.ExecuteInstructions("F");
+    
+    // Grid should now have scent at (5, 3)
+    Assert.True(grid.HasScent(5, 3));
+}
+
+[Fact]
+public void RobotRespectsScentFromLostRobot()
+{
+    var grid = new Grid(5, 3);
+    
+    // First robot falls off
+    var robot1 = new Robot(new RobotPosition(5, 3, Orientation.N), grid);
+    robot1.ExecuteInstructions("F");
+    Assert.True(robot1.IsLost);
+    
+    // Second robot tries same move but respects scent at (5, 3)
+    var robot2 = new Robot(new RobotPosition(5, 3, Orientation.N), grid);
+    robot2.ExecuteInstructions("F");
+    
+    Assert.False(robot2.IsLost);
+    Assert.Equal("5 3 N", robot2.ToString());
+}
+
+[Fact]
+public void RobotMovesOtherDirectionsWithScent()
+{
+    var grid = new Grid(5, 3);
+    
+    // First robot falls off east
+    var robot1 = new Robot(new RobotPosition(5, 2, Orientation.E), grid);
+    robot1.ExecuteInstructions("F");
+    
+    // Second robot can still move north from (5, 2)
+    var robot2 = new Robot(new RobotPosition(5, 2, Orientation.N), grid);
+    robot2.ExecuteInstructions("F");
+    
+    Assert.False(robot2.IsLost);
+    Assert.Equal("5 3 N", robot2.ToString());
+}
 }
