@@ -20,19 +20,19 @@ This repository implements the Martian Robots coding challenge using C#/.NET
    - launch.json and task.json - build are alrady checked in 
    
 4. **Run the application and Test Cases**:
-   Application - 
-   **Option A: Run through terminal**
+    
+   **Application - Option A: Run through terminal**
    - Open a terminal and run:
      ```Powershell
-    dotnet run --project MartianRobots
+     dotnet run --project MartianRobots
      ```
    **Option B: Use the debugger**
    - Press `F5` or go to Run → Start Debugging
    - Select ".NET: Launch MartianRobots" configuration 
-   - The application will build and launch with debugging1 support
+   - The application will build and launch with debugging support
    
-   Test Cases 
-      - Open a terminal and run:
+   **Test Cases -**
+   - Open a terminal and run:
     ```Powershell
     dotnet test
     ```
