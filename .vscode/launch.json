@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET: Launch MartianRobots",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/MartianRobots/bin/Debug/net10.0/MartianRobots.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/MartianRobots",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}
