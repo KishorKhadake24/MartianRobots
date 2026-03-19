@@ -15,7 +15,8 @@ This repository implements the Martian Robots coding challenge using C#/.NET
 
 1. **Open the workspace**:
    - Open VS Code
-   - File → Open Folder → Select the `MartianRobots` folder
+   - Clone repo to local ex Create New Folder `MartianRobots` and clone there
+   - File → Open Folder → Select the cloned parent directory ex `MartianRobots` folder
 2. **Configure launch settings**:
    - launch.json and task.json - build are alrady checked in 
    
